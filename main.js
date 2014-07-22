@@ -25,7 +25,10 @@ var addNumbers = function(str) {
 var longestWord = function(str) {
 	var strList = str.split(' ');
 
-	return _.max(strList, function(item) {
+	
+
+/*	return _.max(strList, function(item) {
 		return item.length; 
-	});
+*/	});
 };
+
