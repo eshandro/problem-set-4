@@ -24,11 +24,14 @@ var addNumbers = function(str) {
 // Problem 2
 var longestWord = function(str) {
 	var strList = str.split(' ');
-
-	
-
-/*	return _.max(strList, function(item) {
-		return item.length; 
-*/	});
+	var answer = [' '];
+	console.log(answer[0].length);
+	for (var i=0; i < strList.length; i++) {
+		if (strList[i].length > answer[0].length) {
+			answer.pop();
+			answer.push(strList[i]);
+		};
+	};
+	return answer[0];
 };
 
