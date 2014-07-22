@@ -20,3 +20,12 @@ var addNumbers = function(str) {
 		return memo + num; }, 0);
 	return answer;
 }
+
+// Problem 2
+var longestWord = function(str) {
+	var strList = str.split(' ');
+
+	return _.max(strList, function(item) {
+		return item.length; 
+	});
+};
