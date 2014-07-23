@@ -42,17 +42,13 @@ var averageStringNumbers = function(str) {
 	var specialCharCounter = 0;
 
 	for (var i=0; i <= str.length; i++) {
-/*		if(str.charAt(i) === ' ') {
-			specialCharCounter++;
-			console.log(specialCharCounter + i + ' space');
-		}*/
-		if(str.charAt(i) in specialChar !== -1) {
-			specialCharCounter++
-			console.log(specialCharCounter);
-			console.log(str.charAt(i));
-		}
-	}
-	
+		specialChar.forEach(function(item) {
+			if (item === str.charAt(i)) {
+				specialCharCounter++
+			};
+		});
+	};
+
 	for(var i=0; i <= str.length; i++) {
 		if(str.charAt(i) in allNumbers) {
 			numbersFromString.push(+str.charAt(i));	
@@ -64,6 +60,9 @@ var averageStringNumbers = function(str) {
 		answer += numbersFromString[i];
 	}
 
-	console.log(specialCharCounter);
 	return Math.round(answer/(str.length - numbersFromString.length - specialCharCounter));	
-}
+};
+
+// Another solution would be to use str.charChodeAt(0) to get Ascii code 
+// of each character in the string, and compare them against codes that are 
+// only numbers or only letters. 
